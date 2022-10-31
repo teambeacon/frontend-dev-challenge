@@ -4,15 +4,15 @@
 
 <br>
 
-Thanks for applying to be a dev at Beacon! Instead of asking you to solve a leetcode problem - we'd like to see you work on something that is actually something you'd do on the job.
+Thanks for applying to be a Frontend Developer at Beacon! Instead of asking you to solve a leetcode problem - we'd like to see you complete a task that is actually something you'd do on the job.
 
-Your task is to take the page design that's included below and recreate it as a page in a NextJS project.
+This project will consist of taking a page design that's included below and recreate it as a page in a NextJS project.
 
 <br>
 
 ## There are three required features:
 
-1. Fetch a list of schools from the Beacon API and then display it in a list like the one shown in the provided design.
+1. Fetch a list of schools from the Beacon API and then display it in a list like the one shown in the design.
 2. Request permission to access the browser's location. If granted, sort the list of schools from closest -> furthest. If denied, sort the list in alphabetical order (by school name).
 3. Include a search bar to allow the user to search by school name. 
 
