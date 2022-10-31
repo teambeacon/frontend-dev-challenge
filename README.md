@@ -24,7 +24,7 @@ This project will consist of taking a page design that's included below and recr
     - For the background gradient, you can do one from the top left -> bottom right (colors: #4502D9 to #000000)
     - If you have trouble with Figma please email me!
 - Install the packages with `npm install` and run the project with `npm run dev`
-- You are free to install any additional packages you see fit
+- You are free to install any additional packages you see fit.
 - Please comment your code to make it easier to review.
 - Request the list of schools by performing a `GET` request to `api.sendbeacon.com/team/schools`.
 - You must run the project on host `3000` or else your browser will get blocked by CORS (this is the default, just don't change it).
