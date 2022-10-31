@@ -30,3 +30,4 @@ Your task is to take the page design that's included below and recreate it as a 
 - Bootstrap v5 has been included and you're free to use it.
 - Your project must be responsive (work on both mobile and desktop).
 - The Beacon logo and the search bar icon are already included in the  `src/assets/` directory.
+- Please comment your code to make it easier to review.
