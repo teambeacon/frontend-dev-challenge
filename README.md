@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Dev Challenge
 
-## Getting Started
+**FORK this repo into your own account and email the link to your project when finished.**
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Thanks for applying to be a dev at Beacon! Instead of asking you to solve a leetcode problem - we'd like to see you work on something that is actually something you'd do on the job.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Your task is to take the page design that's included below and recreate it as a page in a NextJS project.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## There are three required features:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Fetch a list of schools from the Beacon API and then display it in a list like the one shown in the provided design.
+2. Request permission to access the browser's location. If granted, sort the list of schools from closest -> furthest. If denied, sort the list in alphabetical order (by school name).
+3. Include a search bar to allow the user to search by school name. 
 
-## Learn More
+<br>
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Important Details
+- The design can be viewed [here](https://www.figma.com/file/nS3D3sSjVFrZNKHlB5Z6yH/Frontend-Dev-Challenge?node-id=0%3A1)
+    - Take note of the comments on the page as they clarify some of the details.
+    - For the background gradient, you can do one from the top left -> bottom right (colors: #4502D9 to #000000)
+    - If you have trouble with Figma please email me!
+- Install the packages with `npm install` and run the project with `npm run dev`
+- Request the list of schools by performing a `GET` request to `api.sendbeacon.com/team/schools`.
+- You must run the project on host `3000` or else your browser will get blocked by CORS (this is the default, just don't change it).
+- Your work should be done in `src/pages/index.tsx` and all styles should be added to `src/styles/Home.module.css`.
+- Bootstrap v5 has been included and you're free to use it.
+- Your project must be responsive (work on both mobile and desktop).
+- The Beacon logo and the search bar icon are already included in the  `src/assets/` directory.
