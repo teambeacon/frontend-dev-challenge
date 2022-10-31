@@ -24,10 +24,11 @@ Your task is to take the page design that's included below and recreate it as a 
     - For the background gradient, you can do one from the top left -> bottom right (colors: #4502D9 to #000000)
     - If you have trouble with Figma please email me!
 - Install the packages with `npm install` and run the project with `npm run dev`
+- You are free to install any additional packages you see fit
+- Please comment your code to make it easier to review.
 - Request the list of schools by performing a `GET` request to `api.sendbeacon.com/team/schools`.
 - You must run the project on host `3000` or else your browser will get blocked by CORS (this is the default, just don't change it).
 - Your work should be done in `src/pages/index.tsx` and all styles should be added to `src/styles/Home.module.css`.
 - Bootstrap v5 has been included and you're free to use it.
 - Your project must be responsive (work on both mobile and desktop).
 - The Beacon logo and the search bar icon are already included in the  `src/assets/` directory.
-- Please comment your code to make it easier to review.
