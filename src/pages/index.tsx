@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 
@@ -10,6 +10,21 @@ export default function Home() {
   const [userLocation, setUserLocation] = useState({});
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredSchool, setHoveredSchool] = useState(null);
+
+
+  const getSchools = async () => {
+    const response = await fetch(api_url);
+    const data = await response.json();
+    setSchools(data);
+  }
+
+  useEffect(() => {
+    getSchools();
+    // Empty dependency array so the function only runs once
+  }, []);
+
+
+
 
 
 
