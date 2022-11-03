@@ -7,7 +7,10 @@ export default function Home() {
   const api_url = 'https://api.sendbeacon.com/team/schools';
   const [schools, setSchools] = useState([]);
   const [location, setLocation] = useState(false);
-  const [userLocation, setUserLocation] = useState({});
+  const [userLocation, setUserLocation] = useState({
+    lat: 0,
+    lng: 0
+  });
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredSchool, setHoveredSchool] = useState(null);
 
@@ -48,6 +51,7 @@ export default function Home() {
 
 
   const distance = (lat1: number, lon1: number, lat2: number, lon2: number, unit: string) => {
+    // This function is from https://www.geodatasource.com/developers/javascript and is used to calculate the distance between two points
 
     if ((lat1 == lat2) && (lon1 == lon2)) {
       return 0;
@@ -70,6 +74,22 @@ export default function Home() {
     }
   }
 
+  const sortSchools = (...schools: Array<any>) => {
+    // This function sorts the schools by distance from the user
+    // It takes in an array of schools and returns a sorted array of schools based on distance from the user
+    const mappedSchools = schools[0].map.schools?.map((school: any) => school)
+
+    if (location) {
+      return mappedSchools?.sort((a: any, b: any) => {
+        const distanceA = distance(userLocation.lat, userLocation.lng, a.lat, a.lng, 'K');
+        const distanceB = distance(userLocation.lat, userLocation.lng, b.lat, b.lng, 'K');
+
+        return distanceA - distanceB;
+      })
+    } else {
+      return mappedSchools?.sort((a: any, b: any) => a.name.localeCompare(b.name));
+    }
+  }
 
   useEffect(() => {
     getSchools();
