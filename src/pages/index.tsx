@@ -18,7 +18,7 @@ export default function Home() {
     setSchools(data);
   }
 
-  const success = (position) => {
+  const success = (position: GeolocationPosition) => {
     const crd = position.coords;
 
     console.log('Your current position is:');
@@ -34,7 +34,7 @@ export default function Home() {
     setLocation(true);
   }
 
-  const error = (err) => {
+  const error = (err: GeolocationPositionError) => {
     console.warn(`ERROR(${err.code}): ${err.message}`);
 
     setLocation(false);
