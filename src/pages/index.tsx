@@ -29,6 +29,40 @@ export default function Home() {
 
 
   return (
-    <div></div>
+    <div className={styles.body}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>
+            <span className={styles.titleText}>Pick Your School</span>
+          </h1>
+          <form className={styles.search}>
+            <button type='submit' className={styles.searchButton}>
+              <Image src='/search.svg' alt='Search' width={20} height={20} />
+            </button>
+            <input
+              type='text'
+              placeholder='Search for your school...'
+              className={styles.searchInput}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </form>
+          <div className={styles.location}>
+          </div>
+        </div>
+        <div className={styles.schools}>
+          {schools
+            .filter((school) => {
+              if (searchQuery === '') return true;
+              if (school.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+                return true;
+              }
+              return false;
+            }
+            )
+          }
+        </div>
+      </div>
+    </div>
   )
 }
