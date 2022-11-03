@@ -56,7 +56,7 @@ export default function Home() {
   const handleOnChange = (e) => {
     setSearch(e.target.value)
   }
-  
+ 
   const filteredDisplay = schools.filter((school) => {
     return school.name.toLowerCase().includes(search.toLowerCase());
   })
