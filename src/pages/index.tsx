@@ -18,6 +18,28 @@ export default function Home() {
     setSchools(data);
   }
 
+  const success = (position) => {
+    const crd = position.coords;
+    console.log('Your current position is:');
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+    console.log(`Roughly ${crd.accuracy} meters.`);
+    setUserLocation({
+      lat: crd.latitude,
+      lng: crd.longitude
+    });
+    setLocation(true);
+  }
+
+
+
+
+
+
+
+
+
+
   useEffect(() => {
     getSchools();
     // Empty dependency array so the function only runs once
@@ -28,41 +50,11 @@ export default function Home() {
 
 
 
+
+
   return (
     <div className={styles.body}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h1 className={styles.title}>
-            <span className={styles.titleText}>Pick Your School</span>
-          </h1>
-          <form className={styles.search}>
-            <button type='submit' className={styles.searchButton}>
-              <Image src='/search.svg' alt='Search' width={20} height={20} />
-            </button>
-            <input
-              type='text'
-              placeholder='Search for your school...'
-              className={styles.searchInput}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </form>
-          <div className={styles.location}>
-          </div>
-        </div>
-        <div className={styles.schools}>
-          {schools
-            .filter((school) => {
-              if (searchQuery === '') return true;
-              if (school.name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                return true;
-              }
-              return false;
-            }
-            )
-          }
-        </div>
-      </div>
+
     </div>
   )
 }
