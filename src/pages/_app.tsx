@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import { store } from '../../lib/store'
+import { store } from '../features/store'
 import { Provider } from 'react-redux'
 
 import 'bootstrap/dist/css/bootstrap.css'
