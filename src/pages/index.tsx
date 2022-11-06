@@ -10,26 +10,47 @@ import { Container, Stack, Row, Button, Col } from 'react-bootstrap'
 
 const {data: _schools} = schoolApi.useGetSchoolsQuery("Schools")
 const schools = _schools?.schools
-const searchTerms = useSelector((state: RootState) => state.searchfield.searchText)
-const dispatch = useDispatch()
+
+interface SchoolData {
+  id: string,
+  name: string,
+  type: string,
+  zipCode: string,
+  enrolled: number,
+  applicants: number,
+  admitted: number,
+  tuition: number,
+  highestDegree: string,
+  county: string,
+  state: string,
+  coordinates: {
+    lat: number,
+    long: number,
+  }
+}
 
 
-const initialSchools = schools?.map((school: any) => {
+const initialSchools = schools?.map((school: SchoolData) => {
   return [ school.name, school.coordinates.lat, school.coordinates.long ]
 }).sort()
 
-const SchoolList = ({ initialSchools }) => {
+
+const SchoolList: React.FC<SchoolData> = ({ initialSchools }) => {
   return (
 
     <>
-    {initialSchools.map(school => 
+    {initialSchools.map(school: [] => 
       <SchoolCell name={school[0]}/>)}
     </>
 
   );
 };
 
-const SchoolCell = ({ name }) => {
+const SchoolCell = ({ name:string }) => {
+
+const searchTerms = useSelector((state: RootState) => state.searchfield.searchText)
+const dispatch = useDispatch()
+
   return (
     <Container className={styles.schoolCard}>
       <Row className="h-100">
