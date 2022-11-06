@@ -1,8 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-body {
-background: rgb(0,0,0);
-background: linear-gradient(315deg, rgba(0,0,0,1) 35%, rgba(69,2,217,1) 100%);
-background-repeat: no-repeat;
-font-family: 'Poppins', sans-serif;
-}

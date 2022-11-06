@@ -5,16 +5,13 @@ background: rgb(0,0,0);
 background: linear-gradient(315deg, rgba(0,0,0,1) 35%, rgba(69,2,217,1) 100%);
 background-repeat: no-repeat;
 font-family: 'Poppins', sans-serif;
-}
-
-.main {
-  width: 500px;
-  position: relative;
+height: 100vh;
 }
 
 .schoolCard {
   background-color: #282E3C;
-  height: 75px;
+  max-height: 75px;
+  max-width: 900px;
   border: none;
   border-radius: 20px;
   padding: 10px 10px;
@@ -34,9 +31,11 @@ font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
-  height: 54px;
-  width: 54px;
+  margin: auto;
+  max-height: 54px;
+  max-width: 54px;
+  min-height: 50px;
+  min-width: 50px;
 
 }
 
@@ -45,6 +44,7 @@ font-family: 'Poppins', sans-serif;
   border: none;
   font-weight: 600;
   font-size: 32px;
+  color: white;
 }
 
 .searchbar {
@@ -54,9 +54,9 @@ font-family: 'Poppins', sans-serif;
   font-size: 23px;
   line-height: 30px;
   font-weight: 400;
-  width: 100%;
   border-radius: 10px;
   color: white;
+  width: 100%;
 }
 
 .searchbar:focus {
@@ -70,11 +70,13 @@ font-family: 'Poppins', sans-serif;
   padding-bottom: 25%;
   overflow-y: auto;
   z-index: 1;
-  height: 75vh;
+  max-height: 75vh;
 }
 
 .search {
 position: sticky;
 top: 0;
 z-index: 2;
+max-width: 900px;
+margin: auto;
 }
